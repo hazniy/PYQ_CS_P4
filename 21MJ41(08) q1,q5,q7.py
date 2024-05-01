@@ -20,15 +20,19 @@ class vendingMachine:
         self.items.append(item4)
         self.moneyIn = 0
 
-def checkValidCode(code):
-    for x in range (4):
-        if items[x].getcode == code:
-            if self.items[x].getcost <= self.moneyIn:
-               return x
-            else:
-                return -2
-    return -1
-machineOne = vendingMachine(chocolate, sweets, sandwich, apple)
+    def checkValidCode(self,code):
+        for x in range (4):
+            if self.items[x].getcode == code:
+                if self.items[x].getcost <= self.moneyIn:
+                    return x
+                else:
+                    return -2
+            return -1
+choc = fooditem('chocolate', 1234, 65)
+sweets = fooditem('swwets', 1234, 65)
+sandwich = fooditem('', 0, 0)
+apple = fooditem('', 0, 0)
+machineOne = vendingMachine(choc,sweets,sandwich,apple)
 
 #ques 5 binary search RECURSION
 # (b)
