@@ -1,0 +1,27 @@
+#ques 1 stack
+#(b)
+datastack = [0*100 for i in range (100)]
+def pop():
+    global top
+    if top == -1:
+        return -1
+    else:
+        remove = datastack[top]
+        top = top - 1
+        return remove
+#ques 3 binary search
+def binarysearch (thisarray, lower, upper, searchitem):
+    flag = -2
+    while flag != -1:
+        mid = lower + ((upper-lower)/2)
+        if upper < lower:
+            return -1
+        else:
+            if thisarray[mid] > searchitem:
+                upper = mid-1
+            else:
+                if thisarray[mid] < searchitem:
+                    lower = mid + 1
+                else:
+                    return mid
+
