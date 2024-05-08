@@ -1,39 +1,35 @@
 #ques 1 insertion
 def Initialise():
- global Jobs
- global NumberOfJobs
+ global Jobs, NumberOfJobs
  for x in range(0, 100):
- Jobs.append([-1,-1])
- NumberOfJobs = 0
+    Jobs.append([-1,-1])
+    NumberOfJobs = 0
 
 def AddJob(JobNumber, Priority):
- global NumberOfJobs
- global Jobs
- if NumberOfJobs == 100:
- print("Not added")
- else:
- Jobs[NumberOfJobs] = [JobNumber, Priority]
- print("Added")
- NumberOfJobs = NumberOfJobs + 1
+    global NumberOfJobs, Jobs
+    if NumberOfJobs == 100:
+        print("Not added")
+    else:
+        Jobs[NumberOfJobs] = [JobNumber, Priority]
+        print("Added")
+        NumberOfJobs = NumberOfJobs + 1
 
 def PrintArray():
- global Jobs
- global NumberOfJobs
- for X in range(0, NumberOfJobs):
- print(str(Jobs[X][0]), " priority ", str(Jobs[X][1]))
+    global Jobs, NumberOfJobs
+    for X in range(0, NumberOfJobs):
+        print(str(Jobs[X][0]), " priority ", str(Jobs[X][1]))
 
 def InsertionSort():
- global Jobs
- global NumberOfJobs
+ global Jobs, NumberOfJobs
  for I in range(1, NumberOfJobs):
- Current1 = Jobs[I][0]
- Current2 = Jobs[I][1]
- while I > 0 and Jobs[I-1][1] > Current2:
- Jobs[I][0] = Jobs[I-1][0]
- Jobs[I][1] = Jobs[I-1][1]
- I = I - 1
- Jobs[I][0] = Current1
- Jobs[I][1] = Current2
+    Current1 = Jobs[I][0]
+    Current2 = Jobs[I][1]
+    while I > 0 and Jobs[I-1][1] > Current2:
+        Jobs[I][0] = Jobs[I-1][0]
+        Jobs[I][1] = Jobs[I-1][1]
+        I = I - 1
+        Jobs[I][0] = Current1
+        Jobs[I][1] = Current2
 
 #ques 2 OOP / Text File
 #(a)
@@ -74,9 +70,6 @@ while flag == False:
         if item == Game.GetName[i]:
             print(i)
             flag = True
-#PROBLEM TO ADDRESS :
-#
-
 
 #ques 3 queue & recursive
 #(a)
@@ -128,3 +121,7 @@ print(num)
 
 #right
 print(str(RecursiveOutput(tail-1)))
+
+#PROBLEM TO ADDRESS
+#tak faham sgt the (d) one, recursive how it works act <-- sbb dia queue so dia kena start-1
+#cth queue [5] + queue [4]
