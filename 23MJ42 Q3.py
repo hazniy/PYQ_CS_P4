@@ -4,10 +4,10 @@
 #employee also has paid in a week in 52 week
 class Employee:
     def __init__(self, hourpay, empnum, jobtitle):
-        self.HourlyPay = hourpay
-        self.EmployeeNumber = empnum
-        self.PayYear2022 = jobtitle
-        self.PayYear2022 = []
+        self.HourlyPay = hourpay #REAL
+        self.EmployeeNumber = empnum #STRING
+        self.jobtitle = jobtitle #STRING
+        self.PayYear2022 = [] #ARRAY OF REAL 
         for i in range(52):
             self.PayYear2022[i] = 0.0
     def GetEmployeeNumber(self):
@@ -37,7 +37,7 @@ try:
     file = open('C:/Users/u/Desktop/Employees.txt','r')
     payhour = float((file.readline()).strip())
     while payhour != '':
-        empnum = int((file.readline()).strip())
+        empnum = (file.readline()).strip()
         jobtitle = file.readline()
         if len(jobtitle) <= 5:
             bonusval = float(jobtitle)
@@ -54,13 +54,13 @@ print(EmployeeArray)
 def Enterhrs():
     try:
         file = open('C:/Users/u/Desktop/HoursWeek1.txt', 'r')
-        empnum = int(file.readline().strip())
+        empnum = file.readline().strip()
         while empnum != '':
             for i in range(8):
                 if EmployeeArray[i].EmployeeNumber == empnum:
                     numhrs = int(file.readline())
                     EmployeeArray[i].SetPay(EmployeeArray[i].PayYear2022,numhrs)
-            empnum = int(file.readline().strip())
+            empnum = file.readline().strip()
         file.close()
     except IOError:
         print('file doesnt exist')
